@@ -1,17 +1,12 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import { AppProps } from "next/app";
+import { Page } from "../components/page/mainPage";
+import "./styles.css";
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to bakate-blog!</title>
-      </Head>
-      <main className="app">
+      <Page>
         <Component {...pageProps} />
-      </main>
-    </>
+      </Page>
   );
 }
 
