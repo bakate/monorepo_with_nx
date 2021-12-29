@@ -25,8 +25,7 @@ const ethicalClothesOverrides = {
   },
   config: { ...config },
 };
-export const ethicalClothes = () =>
-  extendTheme(
+export const ethicalClothesTheme = extendTheme(
     ethicalClothesOverrides,
     withDefaultColorScheme({
       colorScheme: 'teal',
