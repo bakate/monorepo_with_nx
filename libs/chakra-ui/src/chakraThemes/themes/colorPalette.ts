@@ -1,5 +1,5 @@
 
-export const ethicalColorPalette =  {
+export const basicColorPalette =  {
 
   "gray": {
     "50": "#EDEFF7",

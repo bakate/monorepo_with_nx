@@ -5,7 +5,7 @@ import {
   withDefaultVariant,
 } from '@chakra-ui/react';
 import { theme as base } from '@chakra-ui/theme';
-import { ethicalColorPalette } from './colorPalette';
+import { basicColorPalette } from './colorPalette';
 import { ethicalClothesComponentsStyles } from './componentsStyles';
 import { ethicalClothesGlobalStyles } from './globalStyles';
 
@@ -18,7 +18,7 @@ const ethicalClothesOverrides = {
     heading: `Montserrat, ${base.fonts?.heading}`,
     body: `Alice, ${base.fonts?.body}`,
   },
-  colors: { ...ethicalColorPalette },
+  colors: { ...basicColorPalette },
   styles: { ...ethicalClothesGlobalStyles },
   components: {
     ...ethicalClothesComponentsStyles,
