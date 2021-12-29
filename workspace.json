@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "bakate-blog": "apps/bakate-blog",
-    "bakate-blog-e2e": "apps/bakate-blog-e2e"
+    "bakate-blog-e2e": "apps/bakate-blog-e2e",
+    "chakra-ui": "libs/chakra-ui"
   }
 }
