@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bakate-organization/chakra-ui": ["libs/chakra-ui/src/index.ts"]
+      "@bakate-organization/chakra-ui": ["libs/chakra-ui/src/index.ts"],
+      "@bakate-organization/markdown": ["libs/markdown/src/index.ts"],
+      "@bakate-organization/shared-react/mdx-elements": [
+        "libs/shared-react/mdx-elements/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

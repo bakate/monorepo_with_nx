@@ -1,6 +1,13 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 export interface FrontMatter {
-  [prop: string]: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  author: {
+    name: string;
+  };
+  tags?: string[];
 }
 
 export interface MarkdownDocument {

@@ -1,8 +1,8 @@
-import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
-import {MarkdownDocument} from "./markdown-types";
+import fs from "fs";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+import { join } from "path";
+import { FrontMatter, MarkdownDocument } from "./markdown-types";
 
 export const getParsedFileContentBySlug = (
   slug: string,
@@ -15,7 +15,7 @@ export const getParsedFileContentBySlug = (
   const {data, content } = matter(fileContents);
 
   return {
-    frontMatter: data,
+    frontMatter: data as FrontMatter,
     content,
   };
 };
