@@ -5,7 +5,12 @@ import * as fs from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { join } from "path";
 import { ParsedUrlQuery } from "querystring";
+import highlight from 'highlight.js';
+import typescript from 'highlight.js/lib/languages/typescript';
+import 'highlight.js/styles/vs2015.css';
+import { useEffect } from "react";
 
+highlight.registerLanguage('typescript', typescript);
 
 export interface ArticleProps extends ParsedUrlQuery {
   slug?: string;
@@ -14,6 +19,13 @@ export interface ArticleProps extends ParsedUrlQuery {
 const POSTS_PATH = join(process.cwd(), process.env.articleMarkdownPath);
 
 export default function Slug({ frontMatter, html}) {
+
+
+  useEffect(() => {
+    highlight.highlightAll();
+  }, []);
+
+
   return (
     <div>
       <article>

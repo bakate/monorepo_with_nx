@@ -9,4 +9,20 @@ author:
 
 ## Objects
 
+```ts
+// Create a new object
+interface ObjectProps {
+  name: string;
+  description: string;
+  image?: string;
+  tags?: string[];
+}
+const obj:ObjectProps = {
+  name: 'My Object',
+description: 'This is my object',
+}
+
+console.log(obj.name) // Logs: My Object
+```
+
 Objects are the basic building blocks of the game. They are the things that you can interact with.
