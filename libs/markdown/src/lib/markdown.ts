@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { join } from "path";
+import readingTime from "reading-time";
 import { FrontMatter, MarkdownDocument } from "./markdown-types";
 
 export const getParsedFileContentBySlug = (
@@ -15,7 +16,9 @@ export const getParsedFileContentBySlug = (
   const {data, content } = matter(fileContents);
 
   return {
-    frontMatter: data as FrontMatter,
+    frontMatter: {
+      readingTime: readingTime(content),
+      ...data } as FrontMatter,
     content,
   };
 };

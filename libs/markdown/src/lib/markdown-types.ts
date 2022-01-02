@@ -1,4 +1,5 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { ReadTimeResults } from "reading-time";
 export interface FrontMatter {
   title: string;
   excerpt: string;
@@ -8,6 +9,7 @@ export interface FrontMatter {
     name: string;
   };
   tags?: string[];
+  readingTime: ReadTimeResults;
 }
 
 export interface MarkdownDocument {
