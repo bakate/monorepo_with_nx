@@ -9,7 +9,7 @@ export interface YoutubeProps {
 
 export function Youtube(props: YoutubeProps) {
   return (
-      <AspectRatio w={props.width ?? '700px'} ratio={1}>
+      <AspectRatio maxW={{ base: "500px", md: props.width ?? "700px"}} ratio={4/3}>
         <iframe
           title={props.title}
           src={`https://www.youtube.com/embed/${props.uid}`}
