@@ -33,10 +33,10 @@ export function ChakraHeader(props: HeaderProps) {
       align="center"
       justify="space-between"
     >
-      <Center>
-        <Heading as={'h3'}>{title}</Heading>
-      </Center>
-      <Box d={{ base: 'none', md: 'flex' }} align="center" justify="center">
+      {title ? <Center d={{ base: 'none', md:'flex' }}>
+        <Heading as={"h3"}>{title}</Heading>
+      </Center>: <Box />}
+      <Box d={{ base: 'flex' }} align="center" justify="center">
         <ChakraNav navLinks={linksProp} />
       </Box>
       <DarkModeSwitch />
