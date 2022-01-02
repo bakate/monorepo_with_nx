@@ -1,17 +1,16 @@
-import { Stack } from "@chakra-ui/react";
-import {ReactElement} from 'react'
+import { VStack } from "@chakra-ui/react";
+import { ReactElement } from "react";
 
 export interface ContainerProps {
   children?: ReactElement;
+  isCentered?: boolean;
 }
 
-export function ChakraContainer({children}: ContainerProps) {
+export function ChakraContainer({children, isCentered}: ContainerProps) {
   return (
-    <Stack  direction='column'  p={{base: '1rem', md: '1rem 5rem'}} mx={'auto'}
-      // maxW={'8xl'}
-            w={'full'} overflow={'hidden'}  spacing={1}  minH='100vh'>
-      {children}
-    </Stack>
+    <VStack align={isCentered ? 'center': 'stretch'}  p={{base: '1rem', md: '1rem 5rem'}} mx={'auto'} w={'full'} overflow={'hidden'}  spacing={1}  minH='100vh'>
+     {children}
+    </VStack>
   );
 }
 
