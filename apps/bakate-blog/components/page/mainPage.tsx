@@ -1,13 +1,8 @@
-import {
-  ethicalClothesTheme,
-  ChakraHeader,
-  ChakraContainer,
-  Meta,
-} from '@bakate-organization/chakra-ui';
-import { ChakraProvider } from '@chakra-ui/react';
-import Router from 'next/router';
-import NProgress from 'nprogress';
-import React from 'react';
+import { ChakraContainer, ChakraFooter, ChakraHeader, ethicalClothesTheme, Meta } from "@bakate-organization/chakra-ui";
+import { ChakraProvider } from "@chakra-ui/react";
+import Router from "next/router";
+import NProgress from "nprogress";
+import React from "react";
 
 export interface PageProps {
   children?: React.ReactElement;
@@ -23,9 +18,10 @@ export function Page({ children }: PageProps) {
       href: '/',
       label: 'home',
     },
-    { href: '/articles', label: 'articles' },
     { href: '/about', label: 'about' },
   ];
+  const color = ["black", "white"]
+  const bg = ["gray.100", "gray.700"]
 
   return (
     <ChakraProvider theme={ethicalClothesTheme}>
@@ -35,9 +31,11 @@ export function Page({ children }: PageProps) {
           'a blog to share my knowledge about JavaScript, frontend and backend development'
         }
         url={'/nprogress.css'}
+        favicon={'/favicons/favicon.ico'}
       />
-      <ChakraHeader linksProp={links} title={'Tech Blog'} />
-      <ChakraContainer>{children}</ChakraContainer>
+      <ChakraHeader bgColorProp={bg} colorProp={color} linksProp={links}  />
+      <ChakraContainer isCentered={true}>{children}</ChakraContainer>
+      <ChakraFooter bgColorProp={bg} colorProp={color} />
     </ChakraProvider>
   );
 }

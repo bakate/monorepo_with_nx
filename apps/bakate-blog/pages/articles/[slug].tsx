@@ -1,13 +1,14 @@
 import { getParsedFileContentBySlug, MarkdownRenderingResult, renderMarkdown } from "@bakate-organization/markdown";
 import { mdxElements } from "@bakate-organization/shared-react/mdx-elements";
-import { MDXRemote } from 'next-mdx-remote';
+import { Box } from "@chakra-ui/react";
 import * as fs from "fs";
+import highlight from "highlight.js";
+import typescript from "highlight.js/lib/languages/typescript";
+import "highlight.js/styles/vs2015.css";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemote } from "next-mdx-remote";
 import { join } from "path";
 import { ParsedUrlQuery } from "querystring";
-import highlight from 'highlight.js';
-import typescript from 'highlight.js/lib/languages/typescript';
-import 'highlight.js/styles/vs2015.css';
 import { useEffect } from "react";
 
 highlight.registerLanguage('typescript', typescript);
@@ -27,17 +28,9 @@ export default function Slug({ frontMatter, html}) {
 
 
   return (
-    <div>
-      <article>
-        <h1>
-          {frontMatter.title}
-        </h1>
-        <div>by {frontMatter.author?.name}</div>
-        <hr />
-
-        <MDXRemote {...html} components={mdxElements} />
-      </article>
-    </div>
+    <>
+        <Box maxW={{base:'500px', md: '700px'}}><MDXRemote {...html} components={mdxElements} /></Box>
+    </>
   );
 }
 
