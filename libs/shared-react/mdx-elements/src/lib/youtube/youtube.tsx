@@ -4,11 +4,12 @@ export interface YoutubeProps {
   title: string;
   uid: string;
   fullScreen?: boolean;
+  width?: string;
 }
 
 export function Youtube(props: YoutubeProps) {
   return (
-      <AspectRatio w='560px' ratio={1}>
+      <AspectRatio w={props.width ?? '700px'} ratio={1}>
         <iframe
           title={props.title}
           src={`https://www.youtube.com/embed/${props.uid}`}
