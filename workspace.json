@@ -5,6 +5,14 @@
     "bakate-blog-e2e": "apps/bakate-blog-e2e",
     "chakra-ui": "libs/chakra-ui",
     "markdown": "libs/markdown",
-    "shared-react-mdx-elements": "libs/shared-react/mdx-elements"
+    "shared-react-mdx-elements": "libs/shared-react/mdx-elements",
+    "blog_articles": {
+      "root": "_articles",
+      "sourceRoot": "_articles",
+      "projectType": "application",
+      "targets": {},
+      "tags": [],
+      "implicitDependencies": ["bakate-blog"]
+    }
   }
 }
